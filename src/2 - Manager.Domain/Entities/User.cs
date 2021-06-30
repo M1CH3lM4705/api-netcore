@@ -39,7 +39,7 @@ namespace Manager.Domain.Entities
         }
 
 
-        //Autovalida
+        //Autovalida classe
         public override bool Validate()
         {
             var validator = new UserValidator();
