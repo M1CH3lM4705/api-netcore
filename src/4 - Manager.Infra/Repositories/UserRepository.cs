@@ -41,11 +41,11 @@ namespace Manager.Infra.Repositories
 
         public async Task<List<User>> SearchByName(string name){
             var allUsers = await _context.Users
+                                         .AsNoTracking()
                                          .Where(
                                              x =>
                                                 x.Nome.ToLower().Contains(name.ToLower())
                                          )
-                                         .AsNoTracking()
                                          .ToListAsync();
             return allUsers;
         }
