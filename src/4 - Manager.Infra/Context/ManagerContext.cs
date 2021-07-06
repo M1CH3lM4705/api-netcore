@@ -13,7 +13,7 @@ namespace  Manager.Infra.Context
         {}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLExpress;Initial Catalog=APIManagerUser;User Id=miche;Password=g5h4q1x8;Integrated Security=true;User Instance=true;");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLExpress;Initial Catalog=;User Id=;Password=;Integrated Security=true;User Instance=true;");
         }
 
         public virtual DbSet<User> Users{get; set;} 
