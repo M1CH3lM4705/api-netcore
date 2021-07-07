@@ -19,33 +19,33 @@ namespace Manager.Infra.Repositories
 
         public async Task<User> GetByEmail(string email){
             var user = await _context.Users
+                                     .AsNoTracking()
                                      .Where(
                                          x =>
                                             x.Email.ToLower() == email.ToLower()
-                                     )
-                                     .AsNoTracking()
+                                     )                                     
                                      .ToListAsync();
             return user.FirstOrDefault();
         }
 
         public async Task<List<User>> SearchByEmail(string email){
             var allUsers = await _context.Users
+                                         .AsNoTracking()
                                          .Where(
                                              x =>
                                                 x.Email.ToLower().Contains(email.ToLower())
-                                         )
-                                         .AsNoTracking()
+                                         )                                         
                                          .ToListAsync();
             return allUsers;
         }
 
         public async Task<List<User>> SearchByName(string name){
             var allUsers = await _context.Users
+                                         .AsNoTracking()
                                          .Where(
                                              x =>
                                                 x.Nome.ToLower().Contains(name.ToLower())
                                          )
-                                         .AsNoTracking()
                                          .ToListAsync();
             return allUsers;
         }
